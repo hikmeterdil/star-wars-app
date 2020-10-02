@@ -8,7 +8,7 @@ function SearchResults(props) {
   
   
     return ( 
-      <Grid columns={2} divided>
+      <Grid columns={2} >
         {results.length > 0 ? results.map((result) => (
           <Grid.Column key={result.name}>
             <Grid.Row>

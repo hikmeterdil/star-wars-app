@@ -14,7 +14,9 @@ function SearchResult(props) {
     })
     return (
       <div className='ui items'>
-        <div className='item'>
+        <div className='item' style={{ 
+          padding: '2rem',
+          boxShadow: '1px 1px 5px 0px rgba(199,197,199,1)'}}>
           <div className='image'>
             <img src='/profile-avatar.png' alt='avatar' />
           </div>
