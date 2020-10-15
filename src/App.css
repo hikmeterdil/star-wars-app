@@ -1,3 +1,71 @@
 body {
   padding: 1rem .5rem;
+  
 }
+
+#root {
+  background-color: black;
+  font-family: 'Montserrat', sans-serif;
+  color: yellow;
+}
+.hr-nav-1 .nav-container {
+  overflow: auto;
+  white-space: nowrap;
+  overflow-x: auto;
+
+  max-width: 70em;
+  margin: 1rem auto;
+;
+  text-align: center;
+}
+
+.hr-nav-1 .nav-item {
+  display: inline-block;
+margin-left: 50px;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+a {
+  color: #fff !important;
+  font-size: 36px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+a:hover {
+  color:yellow !important;
+}
+
+body ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.item {
+  color:yellow !important;
+}
+
+#grid-raw {
+  
+}
+
+#Hope {
+  position: relative;
+  top:0;
+  left: 40px !important;
+
+}
+
+#Empire {
+  position: relative;
+  top:20px !important;
+  left: 20px !important;
+}
+
+#Return {
+  position: relative;
+  top:30px !important;
+  
+}
+
+.card {}

@@ -44,7 +44,7 @@ function Planets() {
 
   return (
     <>
-      <Grid columns={2}>
+      <Grid inverted columns={2}>
         {planets &&
           planets.map((planet) => (
             <Grid.Column key={planet.name}>

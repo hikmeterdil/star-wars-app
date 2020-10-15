@@ -44,11 +44,11 @@ function Starships() {
 
   return (
     <>
-      <Grid columns={2}>
+      <Grid inverted columns={2}>
         {starships &&
           starships.map((starship) => (
             <Grid.Column key={starship.name}>
-              <Grid.Row>
+              <Grid.Row >
                 <Starship starship={starship} />
               </Grid.Row>
             </Grid.Column>

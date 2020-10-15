@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function getMovie(movies, id) {
     return movies.filter((movie) => movie.episode_id.toString() == id)[0]

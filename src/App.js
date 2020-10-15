@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Film from './components/Film';
+import Films from './components/Films';
 import Vehicles from './components/Vehicles';
 import Starships from './components/Starships';
 import Planets from './components/Planets';
@@ -14,9 +14,9 @@ import axios from 'axios';
 import { Input, Container, Button } from 'semantic-ui-react';
 
 function App() {
+  const [search, setSearch] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
   const [query, setQuery] = useState('');
-  const [search, setSearch] = useState(null);
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {
@@ -54,6 +54,9 @@ function App() {
       <Container>
         <Header />
         <Switch>
+          <Route exact path='/films'>
+            <Films movies={movies}/>
+          </Route>
           <Route exact path='/film/:id'>
             <Film movies={movies} />
           </Route>

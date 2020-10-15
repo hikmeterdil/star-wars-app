@@ -12,11 +12,11 @@ function Starship(props) {
           <div className='image'>
             <img src='/starship.png' alt='starship' />
           </div>
-          <div className='content'>
-            <div className='header'>{name}</div>
-            <div className='meta'>{model}</div>
-            <div className='description'>{manufacturer}</div>
-            <div className='extra'>{cost_in_credits}</div>
+          <div className='content' style={{color: 'yellow'}}  >
+            <div className='header' style={{color: 'yellow'}}>{name}</div>
+            <div className='meta' style={{color: 'yellow'}}>{model} </div>
+            <div className='description' style={{color: 'yellow'}}>{manufacturer}</div>
+            <div className='extra' style={{color: 'yellow'}}>{cost_in_credits}</div>
           </div>
           
         </div>
