@@ -1,34 +1,36 @@
 import React from 'react';
-import { Card, Image, Grid } from 'semantic-ui-react';
+import { Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Films(props) {
   const movies = props.movies;
 
   return (
-    <> <Grid id='grid-raw'inverted columns={6}>
-      {movies &&
-        movies.map((movie) => {
-          const src = `/${movie.episode_id}.jpg`;
-          return (<>
-           <Grid.Column key={src}>
-           <Grid.Row>
-            <Card id={movie.title} style={{ 
-                padding: '0.3rem',
-                boxShadow: '0 4px 12px 0 white',
-                boxShadow: '0 4px 30px 0 blue'}}>
-              <Image src={src} wrapped ui={false} />
-              <Card.Content>
-                <Card.Header>{movie.title}</Card.Header>
-              </Card.Content>
-            </Card>
-            </Grid.Row>
-            </Grid.Column>
+    <div className='films-container'>
+      <div className='horizontal-scroll-wrapper'>
+        {movies &&
+          movies.map((movie, i) => {
+            const src = `/${movie.episode_id}.jpg`;
+            return (
+              <div
+                key={i}
+                className='horizontal-scroll-item'
+                md={3}
+                style={{
+                  padding: '0.3rem',
 
-        
-           </> 
-          );
-        })} </Grid>
-    </>
+                  color: 'white',
+                  margin: '100px',
+                }}
+              >
+                <Link to={'/film/' + movie.episode_id}>
+                  <Image rounded fluid className='film-image' src={src} />
+                </Link>
+              </div>
+            );
+          })}
+      </div>
+    </div>
   );
 }
 

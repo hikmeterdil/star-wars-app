@@ -1,25 +1,24 @@
 import React from 'react';
+import {Card} from 'react-bootstrap';
 
 function Vehicle(props) {
     const {vehicle} = props;
-    const { name, model,manufacturer, cost_in_credits} = vehicle;
+    const { name, model, cost_in_credits} = vehicle;
    
-    return (
-      <div className='ui items'>
-        <div className='item' style={{ 
-          padding: '2rem',
-          boxShadow: '1px 1px 5px 0px rgba(199,197,199,1)'}}>
-          <div className='image'>
-            <img src='/vehicle.png' alt='vehicle' />
-          </div>
-          <div className='content'>
-            <div className='header'>{name}</div>
-            <div className='meta'>{model}</div>
-            <div className='description'>{manufacturer}</div>
-            <div className='extra'>{cost_in_credits}</div>
-          </div>
-          
-        </div>
-      </div>) }
+    return (<Card className='standart-ele'
+  
+    >
+      <Card.Img className='electric-shadowed' variant='top' src='/vehicle.png' />
+      <Card.Body>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text> {model}</Card.Text>
+        <Card.Text>${cost_in_credits}</Card.Text>
+      </Card.Body>
+    </Card>
+      ) 
+      
+      
+    
+    }
 
       export default Vehicle;

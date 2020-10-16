@@ -1,44 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {Image} from 'semantic-ui-react';
+
+import { Image, Nav } from 'react-bootstrap';
 
 const Header = () => {
   return (
     <>
-    <Image src='/logoSW.png'></Image>
-<div class="hr-nav-1">
-    <nav class="nav-container">
-        <p class="nav-item"> <Link to='/characters'>Characters</Link></p>
-        <p class="nav-item"><Link to='/planets'>Planets</Link></p>
-        <p class="nav-item"> <Link to='/vehicles'>Vehicles</Link></p>
-        <p class="nav-item"> <Link to='/starships'>Starships</Link></p>
-        <p class="nav-item"><Link to='/films'>Movies</Link>  </p>
-  
-    </nav>
-</div>
-
-
-
-
-
-
-    {/* <Heading size='huge'>Star Wars </Heading>
-
-    <Menu borderless widths='1'>
-    
-      <Menu.Item>
-        <Link to='/characters'>Characters</Link>
-      </Menu.Item>
-      <Menu.Item>
-        <Link to='/planets'>Planets</Link>
-      </Menu.Item>
-      <Menu.Item>
-        <Link to='/starships'>Starships</Link>
-      </Menu.Item>
-      <Menu.Item>
-        <Link to='/vehicles'>Vehicles</Link>
-      </Menu.Item>
-    </Menu> */}
+      <Image fluid src='/logoSW.png' />
+      <Nav
+        style={{ marginBottom: '50px', marginTop: '-50px' , height:'50px'}}
+        className='justify-content-center'
+      >
+        <Nav.Item>
+          <Link to='/characters'>Characters</Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Link to='/planets'> Planets</Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Link to='/vehicles'>Vehicles</Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Link to='/starships'>Starships</Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Link to='/films'>Movies</Link>
+        </Nav.Item>
+      </Nav>
     </>
   );
 };

@@ -1,9 +1,8 @@
 import React from 'react';
 import Vehicle from './Vehicle';
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
-import { Grid, Button } from 'semantic-ui-react';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 
 function Vehicles() {
   const [url, setUrl] = useState('https://swapi.dev/api/vehicles/');
@@ -45,21 +44,23 @@ function Vehicles() {
 
   return (
     <>
-      <Grid columns={2}>
-        {vehicles &&
-          vehicles.map((vehicle) => (
-            <Grid.Column key={vehicle.name}>
-              <Grid.Row>
+      <Container>
+        <Row>
+          {vehicles &&
+            vehicles.map((vehicle) => (
+              <Col sm={6} md={4} xs={12} lg={4}>
                 <Vehicle vehicle={vehicle} />
-              </Grid.Row>
-            </Grid.Column>
-          ))}
-      </Grid>
-      <Grid columns={1} centered='true'>
+              </Col>
+            ))}
+        </Row>{' '}
+      </Container>
+
+      <Container className='text-center'>
         {prev && <Button onClick={backward}>Prev</Button>}
         {pages &&
-          pages.map((p) => (
+          pages.map((p, i) => (
             <Button
+              key={i}
               onClick={() => {
                 changePage(p);
               }}
@@ -68,7 +69,7 @@ function Vehicles() {
             </Button>
           ))}
         {next && <Button onClick={forward}>Next</Button>}
-      </Grid>
+      </Container>
     </>
   );
 }

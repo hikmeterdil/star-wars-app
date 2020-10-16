@@ -2,7 +2,7 @@ import React from 'react';
 import Planet from './Planet';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Grid, Button } from 'semantic-ui-react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function Planets() {
   const [url, setUrl] = useState('https://swapi.dev/api/planets/');
@@ -44,21 +44,21 @@ function Planets() {
 
   return (
     <>
-      <Grid inverted columns={2}>
-        {planets &&
-          planets.map((planet) => (
-            <Grid.Column key={planet.name}>
-              <Grid.Row>
+      <Container>
+        <Row>
+          {planets &&
+            planets.map((planet, i) => (
+              <Col key={i} sm={6} md={4} xs={12} lg={4}>
                 <Planet planet={planet} />
-              </Grid.Row>
-            </Grid.Column>
-          ))}
-      </Grid>
-      <Grid columns={1} centered='true'>
+              </Col>
+            ))}
+        </Row>{' '}
+      </Container>
+      <Container className='text-center'>
         {prev && <Button onClick={backward}>Prev</Button>}
         {pages &&
-          pages.map((p) => (
-            <Button
+          pages.map((p, i) => (
+            <Button key={i}
               onClick={() => {
                 changePage(p);
               }}
@@ -67,7 +67,7 @@ function Planets() {
             </Button>
           ))}
         {next && <Button onClick={forward}>Next</Button>}
-      </Grid>
+      </Container>
     </>
   );
 }

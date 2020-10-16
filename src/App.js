@@ -8,10 +8,10 @@ import Starships from './components/Starships';
 import Planets from './components/Planets';
 import SearchResults from './components/SearchResults';
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import 'semantic-ui-css/semantic.min.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import axios from 'axios';
-import { Input, Container, Button } from 'semantic-ui-react';
+import { Form, Container } from 'react-bootstrap';
 
 function App() {
   const [search, setSearch] = useState(null);
@@ -50,39 +50,46 @@ function App() {
   };
 
   return (
-    <Router>
-      <Container>
-        <Header />
-        <Switch>
-          <Route exact path='/films'>
-            <Films movies={movies}/>
-          </Route>
-          <Route exact path='/film/:id'>
-            <Film movies={movies} />
-          </Route>
-          <Route exact path='/planets'>
-            <Planets />
-          </Route>
-          <Route exact path='/starships'>
-            <Starships />
-          </Route>
-          <Route exact path='/vehicles'>
-            <Vehicles />
-          </Route>
-          <Route exact path='/characters'>
-            <Input
-              style={{ marginBottom: '2rem' }}
-              type='text'
-              placeholder='Search for Star Wars Characters'
-              size='large'
-              value={query}
-              onChange={handleQueryChange}
-            />
-            <SearchResults results={searchResults} movies={movies} />
-          </Route>
-        </Switch>
-      </Container>
-    </Router>
+    <>
+      <div id='background'></div>
+      <div id='midground'></div>
+      <div id='foreground'></div>
+      <Router>
+        <Container>
+          <Header />
+          <Switch>
+            <Route exact path='/films'>
+              <Films movies={movies} />
+            </Route>
+            <Route exact path='/film/:id'>
+              <Film movies={movies} />
+            </Route>
+            <Route exact path='/planets'>
+              <Planets />
+            </Route>
+            <Route exact path='/starships'>
+              <Starships />
+            </Route>
+            <Route exact path='/vehicles'>
+              <Vehicles />
+            </Route>
+            <Route exact path='/characters'>
+              <Form className='d-flex justify-content-center'>
+                <Form.Control
+                  className='search-bar'
+                  type='text'
+                  size='lg'
+                  value={query}
+                  onChange={handleQueryChange}
+                  placeholder='Search for Star Wars Characters'
+                />
+              </Form>
+              <SearchResults results={searchResults} movies={movies} />
+            </Route>
+          </Switch>
+        </Container>
+      </Router>
+    </>
   );
 }
 
