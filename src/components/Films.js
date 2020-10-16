@@ -12,7 +12,7 @@ function Films(props) {
           movies.map((movie, i) => {
             const src = `/${movie.episode_id}.jpg`;
             return (
-              <div
+              <div 
                 key={i}
                 className='horizontal-scroll-item'
                 md={3}

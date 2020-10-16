@@ -17,13 +17,13 @@ function SearchResult(props) {
      
     >
       <Card.Img className='crimson-shadowed avatar-img'variant='top' src='/profile-avatar.png' />
-      <Card.Body tex-centered>
+      <Card.Body text-centered>
         <Card.Title>{name}</Card.Title>
         <Card.Text>Birth Year: {birth_year}</Card.Text>
         <Card.Text>Height: {height}</Card.Text>
         <Card.Text>Gender: {gender}</Card.Text>
         {filmIds.map((id, i) => {return (
-        <Nav.Link style={{margin:'5px'}} className='btn-trns'><Link to={'/film/' + id}>{getMovie(movies, id).title}</Link></Nav.Link>)}
+        <Nav.Link  style={{margin:'5px', textAlign:'center'}} className='btn-trns'><Link to={'/film/' + id}>{getMovie(movies, id).title}</Link></Nav.Link>)}
         )}
       </Card.Body>
     </Card>
