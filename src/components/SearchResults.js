@@ -1,26 +1,23 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
 import SearchResult from './SearchResult';
+import { Container, Col, Row } from 'react-bootstrap';
 
 function SearchResults(props) {
-    const {results, movies} = props;
-  
-  
-  
-    return ( 
-      <Grid columns={2} >
-        {results.length > 0 ? results.map((result) => (
-          <Grid.Column key={result.name}>
-            <Grid.Row>
-              <SearchResult
-                result={result} 
-                movies={movies}
-              />
-            </Grid.Row> 
-          </Grid.Column>
-        )) : null}
-      </Grid>
-    );
-  }
+  const { results, movies } = props;
 
-  export default SearchResults;
+  return (
+    <Container fluid>
+      <Row justified-content-between fluid>
+        {results.length > 0
+          ? results.map((result, i) => (
+              <Col key={i} justify-content-center md={6}>
+                <SearchResult result={result} movies={movies} />
+              </Col>
+            ))
+          : []}
+      </Row>
+    </Container>
+  );
+}
+
+export default SearchResults;

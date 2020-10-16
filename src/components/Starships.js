@@ -2,7 +2,7 @@ import React from 'react';
 import Starship from './Starship';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Grid, Button } from 'semantic-ui-react';
+import { Container, Button, Row, Col } from 'react-bootstrap';
 
 function Starships() {
   const [url, setUrl] = useState('https://swapi.dev/api/starships/');
@@ -44,17 +44,18 @@ function Starships() {
 
   return (
     <>
-      <Grid columns={2}>
-        {starships &&
-          starships.map((starship) => (
-            <Grid.Column key={starship.name}>
-              <Grid.Row>
-                <Starship starship={starship} />
-              </Grid.Row>
-            </Grid.Column>
-          ))}
-      </Grid>
-      <Grid columns={1} centered='true'>
+      <Container>
+        <Row>
+          {starships &&
+            starships.map((starship, i) => (
+              <Col sm={6} md={4} xs={12} lg={4}>
+                <Starship key={i} starship={starship} />
+              </Col>
+            ))}
+        </Row>
+      </Container>
+
+      <Container className='text-center'>
         {prev && <Button onClick={backward}>Prev</Button>}
         {pages &&
           pages.map((p) => (
@@ -67,7 +68,7 @@ function Starships() {
             </Button>
           ))}
         {next && <Button onClick={forward}>Next</Button>}
-      </Grid>
+      </Container>
     </>
   );
 }

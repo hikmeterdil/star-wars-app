@@ -1,0 +1,214 @@
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  padding: 1rem 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+}
+
+/* #root {
+    background-color: black;
+  } */
+
+/* .container {
+    background-color: black;
+  } */
+
+.nav {
+  margin-bottom: 4rem;
+}
+div.nav-item {
+  margin: 10px;
+}
+
+div.nav-item a {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+}
+
+div.nav-item a:hover {
+  text-shadow: 1px 1px 4px #00eeff;
+  font-size: 1.3em;
+  color: white;
+}
+
+div.nav-item a:hover {
+  box-shadow: '0 4px 8px 0 white';
+  box-shadow: '0 4px 15px 0 pink';
+}
+
+.form {
+  margin-bottom: 8rem;
+  margin-top: 8rem;
+}
+
+.img-thumbnail {
+  background-color: black;
+  border: none;
+  box-shadow: 0px 0px 33px -8px rgb(255, 238, 4),
+    0px 0px 25px -5px rgb(255, 255, 255);
+}
+
+@keyframes STAR-MOVE {
+  from {
+    left: 0;
+    top: 0;
+  }
+  to {
+    left: -10000px;
+    top: -2000px;
+  }
+}
+
+#background {
+  background: black url(/background.png) repeat 5% 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -300;
+  animation-name: STAR-MOVE;
+  animation-duration: 200s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#midground {
+  background: url(/midground.png) repeat 20% 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -200;
+
+  animation-name: STAR-MOVE;
+  animation-duration: 150s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#foreground {
+  background: url(/foreground.png) repeat 35% 35%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -100;
+
+  animation-name: STAR-MOVE;
+  animation-duration: 100s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.card-body {
+  background-color: transparent;
+}
+
+.crimson-shadowed {
+  filter: drop-shadow(0px 0px 10px crimson);
+}
+
+.electric-shadowed {
+  filter: drop-shadow(0px 0px 10px rgb(3, 205, 255));
+}
+
+
+
+form .form-control-lg {
+  width: 310px;
+  background-color: transparent;
+}
+
+.searchbar {
+  padding: 10px;
+  width: 310px;
+  border: solid #c8ccd0 1px;
+  border-radius: 5px 0px 0px 5px;
+  -webkit-transition: box-shadow linear 0.2s;
+  transition: box-shadow linear 0.2s, width 500ms ease;
+}
+.search-bar:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 20px #9ecaed;
+  width: 310px;
+}
+
+.search-bar:hover {
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+  width: 310px;
+}
+
+.film-image.img-fluid{
+  box-shadow: 0px 0px 33px -8px rgb(255, 238, 4),
+    0px 0px 25px -5px rgb(255, 255, 255);
+  height: 300px;
+}
+
+div.standart-ele.card {
+  background-color: rgba(1, 39, 75, 0.158);
+  color: white;
+  padding: 20px;
+  margin: 10px;
+}
+p.card-text {
+  text-align: center;
+}
+
+div.card-title {
+  text-align: center;
+  text-shadow: 1px 1px 4px rgb(140, 0, 255);
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+::-webkit-scrollbar-button {
+  width: 2px;
+  height: 2px;
+}
+
+.horizontal-scroll-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 400px;
+  max-height: 100vw;
+  margin: 0;
+  background: transparent;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: rotate(-90deg) translateY(-600px);
+  transform-origin: right top;
+  padding-top: 50vw;
+}
+
+.horizontal-scroll-item {
+  display: block;
+  padding: 5px;
+  max-height: 320px;
+  width: 240px;
+  transform: rotate(90deg);
+  transform-origin: right top;
+}
+
+.films-container {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  max-height: 50vw;
+}
